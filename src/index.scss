@@ -66,3 +66,21 @@
   width: 1px;
   white-space: nowrap;
 }
+
+// zustand
+.planned {
+  color: blue;
+}
+.ongoing {
+  color: yellow;
+}
+.ongoing {
+  color: green;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+}

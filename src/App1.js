@@ -1,7 +1,6 @@
-import "./App.scss";
 import React, { useState } from "react";
+import "./App.scss";
 import ModalBase from "./components/modal/ModalBase";
-import ModalAdvanced from "./components/modal/ModalAdvanced";
 import TooltipAdvanced from "./components/tooltip/TooltipAdvanced";
 
 function App() {
@@ -17,20 +16,19 @@ function App() {
             >
                 Open Modal Base
             </button>
-            <button
+            {/* <button
                 className="p-5 ml-5 text-center text-white bg-blue-400 rounded-lg"
                 onClick={() => {
                     setOpenModal(true);
                 }}
             >
                 Open Modal
-            </button>
+            </button> */}
             <ModalBase
                 visible={openModalBase}
                 onClose={() => {
                     setOpenModalBase(false);
                 }}
-                bodyClassName="relative z-10"
             >
                 <div className="p-10 bg-white rounded-lg w-full max-w-[320px]">
                     <TooltipAdvanced title="Tooltip 2">
@@ -41,7 +39,7 @@ function App() {
                     corrupti odio sequi?
                 </div>
             </ModalBase>
-            <ModalAdvanced
+            {/* <ModalAdvanced
                 visible={openModal}
                 onClose={() => {
                     setOpenModal(false);
@@ -80,7 +78,7 @@ function App() {
                 <TooltipAdvanced title="Tooltip">
                     This is a tooltip
                 </TooltipAdvanced>
-            </div>
+            </div> */}
         </div>
     );
 }

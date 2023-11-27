@@ -11,28 +11,28 @@ import Portal from "../Portal";
  * @return {ReactNode} The rendered modal component.
  */
 const ModalBase = ({ visible, onClose, children, bodyClassName = "" }) => {
-    return (
-        <>
-            <CSSTransition
-                in={visible}
-                timeout={250}
-                classNames="zoom"
-                unmountOnExit
-            >
-                {(status) => (
-                    <Portal
-                        visible={status !== "exited"}
-                        onClose={onClose}
-                        containerClassName="fixed z-[9999] inset-0 flex items-center justify-center"
-                        bodyStyle={{ transition: "all 250ms" }}
-                        bodyClassName={`relative z-10 content ${bodyClassName}`}
-                    >
-                        {children}
-                    </Portal>
-                )}
-            </CSSTransition>
-        </>
-    );
+  const nodeRef = React.useRef(null);
+  return (
+    <>
+      <CSSTransition
+        in={visible}
+        timeout={250}
+        classNames="zoom"
+        unmountOnExit
+        nodeRef={nodeRef}
+      >
+        {(status) => (
+          <Portal
+            visible={status !== "exited"}
+            onClose={onClose}
+            bodyClassName={`relative z-10 content ${bodyClassName}`}
+          >
+            {children}
+          </Portal>
+        )}
+      </CSSTransition>
+    </>
+  );
 };
 
 export default ModalBase;
