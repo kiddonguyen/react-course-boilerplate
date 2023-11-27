@@ -1,0 +1,45 @@
+// import "./App.scss";
+// import React from "react";
+// // import { CountProvider, useCount } from "../src/contexts/countContext";
+// // import HeaderMain from "./HeaderMain";
+// import { AuthProvider } from "./contexts/aut-context";
+// import HeaderMain from "./HeaderMain";
+// import { GalleryProvider } from "./contexts/gallery-context";
+// import PhotoList from "./components/gallery/PhotoList";
+// import CartList from "./components/gallery/CartList";
+// // function CountDisplay() {
+// //     const [count] = useCount();
+// //     return <div>The count is: {count}</div>;
+// // }
+// // function Counter() {
+// //     const [, setCount] = useCount();
+// //     const increment = () => setCount((c) => c + 1);
+// //     return (
+// //         <button
+// //             onClick={increment}
+// //             className="p-4 font-semibold text-white bg-purple-500 rounded-lg"
+// //         >
+// //             Increment count
+// //         </button>
+// //     );
+// // }
+// function App() {
+//     return (
+//         <>
+//             {/* <div className="flex items-center justify-center p-5 gap-x-5">
+//             <CountProvider>
+//                 <CountDisplay></CountDisplay>
+//                 <Counter></Counter>
+//             </CountProvider>
+//         </div> */}
+//             <AuthProvider>
+//                 <GalleryProvider>
+//                     <HeaderMain></HeaderMain>
+//                     <PhotoList></PhotoList>
+//                     <CartList></CartList>
+//                 </GalleryProvider>
+//             </AuthProvider>
+//         </>
+//     );
+// }
+// export default App;

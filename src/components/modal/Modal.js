@@ -1,23 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// props: open and handleClose (function that returns empty object)
-const Modal = ({ open = false, handleCloseModal = () => {} }) => {
-    // Make sure that the document is loaded
+import PropTypes from "prop-types";
+
+// createPortal
+const Modal = ({ open = false, handleClose = () => {} }) => {
     if (typeof document === "undefined") return <div className="modal"></div>;
     return ReactDOM.createPortal(
         <div
             className={`fixed inset-0 z-50 flex items-center justify-center p-5 modal ${
-                open ? "" : "opacity invisible"
+                open ? "" : "opacity-0 invisible"
             }`}
         >
             <div
-                className="absolute inset-0 bg-black opacity-25 overlay"
-                onClick={handleCloseModal}
+                className="absolute inset-0 bg-black bg-opacity-25 overlay"
+                onClick={handleClose}
             ></div>
-            <div className="modal-content bg-white relative r-10 p-10 rounded-lg max-w-[482px] w-full">
+            <div className="relative z-10 w-full p-10 bg-white rounded-lg modal-content max-w-[482px]">
                 <span
-                    onClick={handleCloseModal}
-                    className="absolute top-0 right-0 flex items-center justify-center w-10 h-10 p-4 translate-x-1/2 -translate-y-1/2 bg-white rounded-full cursor-pointer"
+                    className="absolute top-0 right-0 flex items-center justify-center w-10 h-10 p-1 bg-white rounded-full cursor-pointer -translate-y-2/4 translate-x-2/4"
+                    onClick={handleClose}
                 >
                     <svg
                         width="14"
@@ -32,17 +33,17 @@ const Modal = ({ open = false, handleCloseModal = () => {} }) => {
                         />
                     </svg>
                 </span>
-                <h2 className="mb-5 text-4xl font-semibold text-center text-black">
-                    Welcome back
+                <h2 className="mb-5 text-4xl font-medium text-center text-black">
+                    Welcome Back!
                 </h2>
                 <div className="flex flex-col gap-3 mb-5">
                     <label htmlFor="email" className="text-sm cursor-pointer">
                         Email address
                     </label>
                     <input
-                        type="text"
+                        type="email"
                         className="w-full text-sm leading-normal bg-[#E7ECF3] rounded-lg p-4"
-                        placeholder="Enter your e-mail"
+                        placeholder="Enter your email"
                     />
                 </div>
                 <div className="flex flex-col gap-3 mb-5">
@@ -58,7 +59,7 @@ const Modal = ({ open = false, handleCloseModal = () => {} }) => {
                         placeholder="Enter your password"
                     />
                 </div>
-                <button className="w-full p-4 text-base font-semibold bg-[#316BFF] rounded-lg">
+                <button className="w-full p-4 text-base font-semibold text-white bg-[#316BFF] rounded-lg">
                     Sign in
                 </button>
             </div>
@@ -66,5 +67,8 @@ const Modal = ({ open = false, handleCloseModal = () => {} }) => {
         document.querySelector("body")
     );
 };
-
+Modal.propTypes = {
+    open: PropTypes.bool.isRequired,
+    handleClose: PropTypes.func.isRequired,
+};
 export default Modal;

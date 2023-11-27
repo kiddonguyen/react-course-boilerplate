@@ -1,13 +1,11 @@
-import "./App.scss";
-import React from "react";
-import GameWithReducer from "./components/ticktactoe/GameWithReducer";
+import FirebaseAuth from "./firebase/FirebaseAuth";
 
-function App() {
+const App = () => {
     return (
-        <>
-            <GameWithReducer></GameWithReducer>
-        </>
+        <div>
+            <FirebaseAuth></FirebaseAuth>
+        </div>
     );
-}
+};
 
 export default App;

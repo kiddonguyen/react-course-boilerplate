@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
 import { calculateWinner } from "../../helpers";
 import Board from "./Board";
 import "./GameStyles.css";

@@ -77,7 +77,7 @@ Image API: https://image.tmdb.org/t/p/original
 
 const MovieItemLoading = () => {
     return (
-        <div className="bg-white p-3 rounded-2xl shadow-sm flex flex-col">
+        <div className="flex flex-col p-3 bg-white shadow-sm rounded-2xl">
             <div className="h-[297px]">
                 <LoadingSkeleton
                     width="100%"
@@ -85,8 +85,8 @@ const MovieItemLoading = () => {
                     radius="16px"
                 ></LoadingSkeleton>
             </div>
-            <div className="p-7 flex-1 flex flex-col">
-                <h3 className="text-lg text-black font-semibold mb-4">
+            <div className="flex flex-col flex-1 p-7">
+                <h3 className="mb-4 text-lg font-semibold text-black">
                     <LoadingSkeleton height="20px"></LoadingSkeleton>
                 </h3>
                 <p className="text-[#999] text-sm mb-6 !leading-loose">
@@ -96,7 +96,7 @@ const MovieItemLoading = () => {
                     <div className="h-2"></div>
                     <LoadingSkeleton height="10px"></LoadingSkeleton>
                 </p>
-                <div className="flex items-center gap-x-3 mt-auto">
+                <div className="flex items-center mt-auto gap-x-3">
                     <svg
                         width="16"
                         height="15"
@@ -124,22 +124,22 @@ const MovieItemLoading = () => {
 
 const MovieItem = ({ data }) => {
     return (
-        <div className="bg-white p-3 rounded-2xl shadow-sm flex flex-col">
+        <div className="flex flex-col p-3 bg-white shadow-sm rounded-2xl">
             <div className="h-[297px]">
                 <img
                     src={`https://image.tmdb.org/t/p/original${data.poster_path}`}
                     alt=""
-                    className="w-full h-full object-cover rounded-lg"
+                    className="object-cover w-full h-full rounded-lg"
                 />
             </div>
-            <div className="p-7 flex-1 flex flex-col">
-                <h3 className="text-lg text-black font-semibold mb-4">
+            <div className="flex flex-col flex-1 p-7">
+                <h3 className="mb-4 text-lg font-semibold text-black">
                     {data.title}
                 </h3>
                 <p className="text-[#999] text-sm mb-6 !leading-loose">
                     {data.overview}
                 </p>
-                <div className="flex items-center gap-x-3 mt-auto">
+                <div className="flex items-center mt-auto gap-x-3">
                     <svg
                         width="16"
                         height="15"
